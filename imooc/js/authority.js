@@ -19,7 +19,6 @@ function login(user) {
         }
     }
     if (!win.sessionStorage.logeed) {
-
         alert("账号或密码错误");
     }
 }

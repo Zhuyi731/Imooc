@@ -44,12 +44,6 @@
     }
 
     function initEvent() {
-        $("body")[0].defineProperty(
-            {}
-        );         
-
-
-
         // page main content react logic
         $(".class-card").on("mouseenter", reactLogic.classActive);
         reactLogic.classActive.apply($(".card-active")); //初始化
@@ -60,9 +54,20 @@
         $(".headJpg,.selfInfo").on("mouseenter", { action: "show" }, reactLogic.selfInfo);
         $(".headJpg,.selfInfo").on("mouseleave", { action: "hide" }, reactLogic.selfInfo);
         $(".chooseClass").on("click", reactLogic.chooseClass);
-        $(".rightLi5").on("click",function(){
+        $(".rightLi5").on("click", function() {
             $("body")[0].scrollTop = 0;
-        });   
+        });
+        var scrollTop;
+        setInterval(function() {
+            scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+            if (scrollTop > 100) {
+                $(".rightLi5").css("display", "block");
+            } else {
+                $(".rightLi5").css("display", "none");
+            }
+        }, 100);
+
+
         //login modal react logic
 
         $("#login").on("click", function() {
@@ -134,10 +139,14 @@
         },
         cardPanelTemplate: function(obj) {
             var html = '<div class="class-panel"><div class="panel-head"><img src="' +
-                obj.imgSrc + '"><div class="label-div"><label>' +
-                obj.smallLabel[0] + '</label><label>' +
-                obj.smallLabel[1] + '</label></div></div><div class="panel-body"><h3>' +
-                obj.title + '</h3><div class="panel-content"><p>' +
+                obj.imgSrc + '"><div class="label-div"><label>';
+            if (obj.smallLabel[1]) {
+                html += obj.smallLabel[0] + '</label><label>' +
+                    obj.smallLabel[1] + '</label></div></div><div class="panel-body"><h3>';
+            } else {
+                html += obj.smallLabel[0] + '</label></div></div><div class="panel-body"><h3>';
+            }
+            html += obj.title + '</h3><div class="panel-content"><p>' +
                 obj.prioty + '&nbsp;&nbsp;<i class="fa fa-user"></i>' +
                 obj.learnNumber + '</p><p>' +
                 obj.decrip + '</p></div></div></div>';

@@ -108,12 +108,15 @@ button:hover {
     display: none !important;
 }
 
-section,footer{
+section,
+footer {
     min-width: 1250px !important;
 }
-body{
-    min-height:100%;
+
+body {
+    min-height: 100%;
 }
+
 //login modal style sheet
 .loginModal {
     position: fixed;
@@ -442,16 +445,19 @@ nav {
         }
     }
 }
-#bell,#headJpg{
+
+#bell,
+#headJpg {
     display: none;
 }
+
 .login-part {
     margin: 0 15px;
     z-index: 50;
     color: $fontHeaderLogin;
     position: relative;
     ul {
-        margin-right:20px;
+        margin-right: 20px;
         li {
             &:hover {
                 background-color: $headerBgHover;
@@ -1018,6 +1024,7 @@ footer {
     background-color: $footerBg;
     color: $contentArrowBase;
     min-width: 620px;
+    min-height: 100px;
 }
 
 .introduction {
@@ -1071,79 +1078,81 @@ footer {
     position: fixed;
     right: 20px;
     top: 50%;
-    padding:0 12px;
+    padding: 0 12px;
     margin-top: -150px;
-    z-index:9999;
+    z-index: 3;
     width: 60px;
     box-sizing: border-box;
     background-color: #fff;
-    box-shadow: 0 4px 12px 0 rgba(7,17,27,.1);
+    box-shadow: 0 4px 12px 0 rgba(7, 17, 27, .1);
     li {
         position: relative;
         display: block;
-        height:36px;
-        padding: 12px 0 ;
-        font-weight:lighter;
-        color:#D9DDE1;
-        border-bottom:1px solid #edf1f2;
+        height: 36px;
+        padding: 12px 0;
+        font-weight: lighter;
+        color: #D9DDE1;
+        border-bottom: 1px solid #edf1f2;
         cursor: pointer;
     }
-    li:hover{
-        i{
+    li:hover {
+        i {
             display: none;
         }
-        b{
+        b {
             display: block;
         }
-        span{
+        span {
             display: block;
         }
     }
-    i{
+    i {
         box-sizing: border-box;
-        padding:16px 8px;
+        padding: 16px 8px;
         display: block;
-        font-size:22px;
-        height:22px;
+        font-size: 22px;
+        height: 22px;
         line-height: 22px;
         width: 100%;
         height: 100%;
         position: absolute;
-        top:0;
-        right:0;
+        top: 0;
+        right: 0;
         display: block;
     }
-    b{
+    b {
         position: absolute;
-        color:#07111b;
-        top:0;
-        right:0;
+        color: #07111b;
+        top: 0;
+        right: 0;
         width: 90%;
-        height:100%;
+        height: 100%;
         font-size: 12px;
         vertical-align: baseline;
         line-height: 16px;
-        padding:16px 0;
-        font-weight:300;
+        padding: 16px 0;
+        font-weight: 300;
         display: none;
     }
-    span{
+    span {
         position: absolute;
-        bottom:0;
-        right:40px;
-        z-index:500;
+        bottom: 0;
+        right: 40px;
+        z-index: 500;
         width: 180px;
         height: 180px;
         display: none;
     }
 }
-#wechatAccount{
-    background:url(../images/elevator.png) no-repeat;
+
+#wechatAccount {
+    background: url(../images/elevator.png) no-repeat;
     background-position: 0 -20px;
     background-size: cover;
 }
-#appDownload{
-    background:url(../images/elevator.png) no-repeat;
+
+#appDownload {
+    background: url(../images/elevator.png) no-repeat;
     background-position: 0 -240px;
     background-size: cover;
 }
