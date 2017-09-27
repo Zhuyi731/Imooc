@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="icon" href="./favicon.ico" type="x-image/icon" />
+    <link rel="stylesheet" href="./css/imooc.css" />
+    <link rel="stylesheet" href="./css/font-awesome.css">
+    <script src="./js/jquery.js" type="text/javascript" language="javascript"></script>
+    <!--[if lt IE 9]>
+		<script src="./js/h5shiv.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+    <div id="rightNav">
+        <ul>
+            <li class="rightLi1"><i class="fa fa-envelope-open-o"></i><b>意见反馈</b></li>
+            <li class="rightLi2"><i class="fa fa-question-circle-o"></i><b>常见问题</b></li>
+            <li class="rightLi3"><i class="fa fa-id-badge"></i>
+                                <b>APP下载</b>
+                                <span alt="官方app" id="appDownload"></span>
+                                 </li>
+            <li class="rightLi4"><i class="fa fa-weixin"></i>
+                                 <b>官方微信</b> 
+                                 <span alt="微信公众号" id="wechatAccount"></span></li>
+            <li class="rightLi5"><i class="fa fa-arrow-up"></i><b>返回顶部</b></li>
+        </ul>
+    </div>
+    <div class="loginModal none">
+        <div class="loginWrap">
+            <div class="login-head">
+                <div class="border-wrap clearfix">
+                    <h1 class="h-login h-active">登陆</h1>
+                    <h1 class="h-register">注册</h1>
+                    <i class="r fa fa-times modal-close"></i>
+                </div>
+            </div>
+            <div class="login-body" align="center">
+                <form name="login-form">
+                    <input type="text" name="username" placeholder="请输入登录邮箱/手机号" class="login-form-input">
+                    <input type="text" name="password" placeholder="6-16位密码，区分大小写，不能用空格" class="login-form-input">
+                    <div class="rememberMe clearfix">
+                        <input type="checkbox" name="rememberMe" id="rememberMe" class="l">
+                        <label for="rememberMe" class="l">7天内自动登录</label>
+                        <a href="#" class="r">忘记密码</a>
+                    </div>
+                    <input type="submit" value="登录" id="login-button">
+                </form>
+            </div>
+            <div class="register-body none">
+                <form name="register-form">
+                    <input type="text" name="register-username" placeholder="请输入注册邮箱/手机号" class="login-form-input">
+                    <input type="password" name="register-password" placeholder="请输入密码" class="login-form-input">
+                    <div class="validate">
+                        <input type="text" name="varifyCode" placeholder="请输入验证码">
+                        <img src="./images/verifycode.png">
+                        <i class="fa fa-refresh"></i>
+                    </div>
+                    <input type="submit" value="注册" id="register-button">
+                </form>
+            </div>
+            <div class="login-foot">
+                <p class="l">其他方式登陆</p>
+                <i class="fa fa-qq"></i>
+                <i class="fa fa-weixin"></i>
+                <i class="fa fa-weibo"></i>
+            </div>
+
+        </div>
+    </div>
+    <header>
+        <nav class="navBar">
+            <ul class="navbarUl">
+                <li class="navbarHead">
+                    <a href="#"> </a>
+                </li>
+                <li class="navbarList"><a href="#">课程</a></li>
+                <li class="navbarList"><a href="#">职业路径<span class="new"></span></a></li>
+                <li class="navbarList"><a href="#">实战</a></li>
+                <li class="navbarList"><a href="#">猿问</a></li>
+                <li class="navbarList"><a href="#">手记</a></li>
+            </ul>
+        </nav>
+        <div class="login-part">
+            <ul>
+                <li title="购物车" class="shop-cart"><a href="#"><i class="fa fa-shopping-cart"></i>购物车</a></li>
+                <li title="login" id="login"><a href="#">登陆</a></li>
+                <li title="register" id="register"><a href="#">注册</a></li>
+                <li id="bell"><a href=""><i class="fa fa-bell"></i></a></li>
+                <li id="headJpg" class="headJpg"><img src="./images/head.jpg"></li>
+            </ul>
+            <div class="selfInfo none">
+                <div class="info-head clearfix">
+                    <img src="./images/head.jpg">
+                    <div class="infoDetail">
+                        <p>Devil</p>
+                        <p>
+                            <small>经验<b>1,234</b></small>
+                            <small>积分<b>1,233</b></small>
+                        </p>
+                    </div>
+                </div>
+                <div class="info-body clearfix">
+                    <ul>
+                        <li><i class="fa fa-bank"></i>我的课程</li>
+                        <li><i class="fa fa-file-text"></i>订单中心</li>
+                        <li><i class="fa fa-home"></i>积分商城</li>
+                        <li><i class="fa fa-cog"></i>个人设置</li>
+                    </ul>
+                </div>
+                <div class="info-foot clearfix">
+                    <button type="button" class="r" id="logout">安全退出</button>
+                </div>
+            </div>
+            <div class="shopping-cart">
+                <div class="shopping-cart-head clearfix">
+                    <h2 class="l">我的购物车</h2>
+                    <h5 class="r">已加入0门课程</h5>
+                </div>
+                <div class="shopping-cart-body">
+                    <i class="fa fa-shopping-cart"></i>
+                    <p class="shopping-text1">购物车里空空如也</p>
+                    <p class="shopping-text2">快去这里选购你中意的课程</p>
+                    <p class="shopping-text3">实战课程</p>
+                    <p class="shopping-text3">职业路径</p>
+                </div>
+                <div class="shopping-cart-foot clearfix">
+                    <p class="l">我的订单中心</p>
+                    <button class="r" type="button">去购物车</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="search">
+            <div class="hover-div" id="search-box">
+            </div>
+            <input type="text" id="headSearch">
+            <i class="fa fa-search"></i>
+            <div class="searchUl" id="recentSearch">
+                <ul>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section id="course-promote">
+        <div class="content-1">
+            <span class="content-hd">方向:</span>
+            <dl>
+                <dd class="active">全部</dd>
+            </dl>
+        </div>
+        <div class="content-2">
+            <span class="content-hd">分类:</span>
+            <dl>
+                <dd class="active">全部</dd>
+            </dl>
+        </div>
+        <div class="content-3">
+            <span class="content-hd">类型 :</span>
+            <dl>
+                <dd class="active">全部</dd>
+            </dl>
+        </div>
+    </section>
+    <section id="classes" class="clearfix">
+        <div class="class-header">
+            <div class="hot-pop">
+                <a href="#" class="active">最热</a>
+                <a href="#">最火</a>
+            </div>
+            <div class="hideClass">
+                <a href="#" class="chooseClass unchecked">隐藏已选择课程</a>
+                <a href="#"><i class="fa fa-chevron-left"></i></a>
+                <a href="#"><i class="fa fa-chevron-right"></i></a>
+            </div>
+        </div>
+        <div class="class-content clearfix">
+            <div class="class-four">
+            </div>
+        </div>
+        <div class="page">
+            <ul>
+                <span><a href="#">首页</a></span>
+                <span><a href="#">上一页</a></span>
+                <li class="page-active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">6</a></li>
+                <li><a href="#">7</a></li>
+                <span><a href="#">下一页</a></span>
+                <span><a href="#">尾页</a></span>
+            </ul>
+        </div>
+    </section>
+    <footer class="clearfix">
+        <div class="introduction">
+            <ul>
+                <li><a href="#">网站首页</a></li>
+                <li><a href="#">企业合作</a></li>
+                <li><a href="#">人才招聘</a></li>
+                <li><a href="#">联系我们</a></li>
+                <li><a href="#">讲师招募</a></li>
+                <li><a href="#">常见问题</a></li>
+                <li><a href="#">意见反馈</a></li>
+                <li><a href="#">慕课大学</a></li>
+                <li><a href="#">友情链接</a></li>
+            </ul>
+            <p class="copyright">Copyright © 2017 imooc.com All Rights Reserved | 京ICP备 13046642号-2</p>
+        </div>
+        <div class="followus r">
+            <a href="#" title="微信" class="a-weixin"></a>
+            <a href="#" title="微博" class="a-weibo"></a>
+            <a href="#" title="QQ" class="a-qq"></a>
+        </div>
+    </footer>
+    <script src="./js/imooc.js"></script>
+    <script src="./js/authority.js"></script>
+</body>
+
+</html>
