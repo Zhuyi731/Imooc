@@ -1,4 +1,4 @@
-! function() {
+! function(window) {
     var G_data = {},
         logged = window.sessionStorage.logged || 0,
         getUrl = "getData/getClassesInfo",
@@ -57,15 +57,24 @@
         $(".rightLi5").on("click", function() {
             $("body")[0].scrollTop = 0;
         });
-        var scrollTop;
-        setInterval(function() {
-            scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
-            if (scrollTop > 100) {
+
+        $(window).scroll(function() {
+            var top = $(window).scrollTop();
+            if (top > 100) {
                 $(".rightLi5").css("display", "block");
             } else {
                 $(".rightLi5").css("display", "none");
             }
-        }, 100);
+        });
+        // var scrollTop;
+        // setInterval(function() {
+        //     scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+        //     if (scrollTop > 100) {
+        //         $(".rightLi5").css("display", "block");
+        //     } else {
+        //         $(".rightLi5").css("display", "none");
+        //     }
+        // }, 100);
 
 
         //login modal react logic
@@ -124,6 +133,7 @@
 
         //	initClassesPanel();
     }
+    
     var util = { //公用的一些工具函数  模板
         cardTemplate: function(obj) {
             var html = '<div class="class-card"><div class="card-1"><div class="card-1-head">' +
@@ -153,6 +163,7 @@
             return html;
         }
     };
+
     //初始化资源相关逻辑
     var initPageLogic = {
         initRecentSearch: function() { //导航栏最近搜索数据
@@ -252,6 +263,7 @@
             $(".h-register").addClass("h-active");
         }
     };
+
     //将关于页面交互逻辑的函数都写在logic对象里
     var reactLogic = {
         chooseClass: function() {
@@ -267,8 +279,8 @@
         classActive: function() {
             var $this = $(this);
             var $pre = $(".card-active");
-            $pre.children(".card-1").css({ "opacity": "1", "height": "91px" });
-            $pre.children(".card-2").css({ "opacity": "0", "height": "0" });
+            $pre.children(".card-1").css({ "display": "block", "height": "91px" });
+            $pre.children(".card-2").css({ "display": "none", "height": "0" });
             $pre.css({ "background": "", "background-size": "" });
             $pre.removeClass("card-active");
             $this.css({
@@ -276,8 +288,8 @@
                 "background-size": "cover"
             });
             $this.addClass("card-active");
-            $this.children(".card-1").css({ "opacity": "0", "height": "0" });
-            $this.children(".card-2").css({ "opacity": "1", "height": "226px" });
+            $this.children(".card-1").css({ "display": "none", "height": "0" });
+            $this.children(".card-2").css({ "display": "block", "height": "226px" });
         },
         hideSearch: function() {
             var $this = $(this);
@@ -302,6 +314,8 @@
                 $(".selfInfo").css("display", "none").addClass("none");
             }
         }
+
     };
+
     init();
-}();
+}(window);
