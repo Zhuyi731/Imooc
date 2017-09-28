@@ -143,6 +143,7 @@ DOM树如下
 链接：[http://github.com/Zhuyi731/Imooc](http://github.com/Zhuyi731/Imooc)   
 以后自己做的项目也会上传到git上，也方便自己在家和公司都可以做修改。
 h5shiv和css的分享贴到自己博客上，记录一下。以后的一些笔记也记录一下，养成这个习惯。
+写的比较乱，如有错误，欢迎指正。
 
 
 
